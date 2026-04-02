@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Entry</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .container {
+            width: 400px;
+            margin: auto;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Enter Production Data</h2>
+
+    <input type="text" placeholder="Unit Name">
+    <input type="text" placeholder="Product Type">
+    <input type="number" placeholder="Production Quantity">
+    
+    <select>
+        <option>Month</option>
+        <option>January</option>
+        <option>February</option>
+    </select>
+
+    <button onclick="submitData()">Submit</button>
+</div>
+
+<script>
+function submitData() {
+    alert("Data Submitted Successfully!");
+}
+</script>
+
+</body>
+</html>
