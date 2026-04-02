@@ -1,44 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Data</title>
+    <title>View Data - S&M System</title>
+
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
         }
+
+        /* Navbar */
+        .nav {
+            background: #1b5e20;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        /* Search */
+        .search-box {
+            margin-bottom: 15px;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 8px;
+        }
+
+        /* Table */
         table {
-            width: 80%;
-            margin: auto;
+            width: 100%;
             border-collapse: collapse;
+            background: white;
         }
+
         th, td {
             padding: 10px;
-            border: 1px solid black;
+            border: 1px solid #ccc;
             text-align: center;
         }
+
         th {
-            background: #ddd;
+            background: #e0e0e0;
+        }
+
+        /* Status */
+        .approved {
+            color: green;
+            font-weight: bold;
+        }
+
+        .pending {
+            color: orange;
+            font-weight: bold;
+        }
+
+        /* Button */
+        button {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .edit-btn {
+            background: blue;
+            color: white;
         }
     </style>
 </head>
+
 <body>
 
-<h2 style="text-align:center;">Production Data</h2>
+<!-- Navbar -->
+<div class="nav">
+    <div>S&M System</div>
+    <div>
+        <a href="dashboard.html">Home</a>
+        <a href="form.html">Enter Data</a>
+    </div>
+</div>
 
-<table>
-    <tr>
-        <th>Unit Name</th>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Month</th>
-    </tr>
-    <tr>
-        <td>ABC Ltd</td>
-        <td>Chemical A</td>
-        <td>500</td>
-        <td>January</td>
-    </tr>
-</table>
+<!-- Content -->
+<div class="container">
+
+    <h2>Production Data Records</h2>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by Unit Name..." onkeyup="searchTable()">
+    </div>
+
+    <!-- Table -->
+    <table id="dataTable">
+        <tr>
+            <th>Unit Name</th>
+            <th>Industry</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Month</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td>ABC Ltd</td>
+            <td>Chemical</td>
+            <td>Fertilizer</td>
+            <td>500</td>
+            <td>January</td>
+            <td>Rajasthan</td>
+            <td class="approved">Approved</td>
+            <td><button class="edit-btn">Edit</button></td>
+        </tr>
+
+        <tr>
+            <td>XYZ Industries</td>
+            <td>Petrochemical</td>
+            <td>Plastic</td>
+            <td>300</td>
+            <td>February</td>
+            <td>Gujarat</td>
+            <td class="pending">Pending</td>
+            <td><button class="edit-btn">Edit</button></td>
+        </tr>
+
+    </table>
+
+</div>
+
+<script>
+function searchTable() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let table = document.getElementById("dataTable");
+    let rows = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < rows.length; i++) {
+        let cell = rows[i].getElementsByTagName("td")[0];
+        if (cell) {
+            let text = cell.textContent.toLowerCase();
+            rows[i].style.display = text.includes(input) ? "" : "none";
+        }
+    }
+}
+</script>
 
 </body>
 </html>
