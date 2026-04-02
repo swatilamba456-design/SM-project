@@ -138,6 +138,8 @@
     <option>Uttar Pradesh</option>
     <option>Madhya Pradesh</option>
 </select>
+       <label>Upload File (PDF / Excel):</label>
+<input type="file" id="fileUpload" accept=".pdf, .xls, .xlsx">
 
 <textarea placeholder="Remarks (optional)"></textarea>
 
@@ -146,10 +148,32 @@
 </div>
 
 <script>
+<script>
 function submitData(event) {
     event.preventDefault();
+
+    let fileInput = document.getElementById("fileUpload");
+    let fileName = fileInput.files.length > 0 ? fileInput.files[0].name : "No File";
+
+    let formData = {
+        unit: document.querySelector("input[type='text']").value,
+        industry: document.querySelectorAll("select")[0].value,
+        category: document.querySelectorAll("select")[1].value,
+        quantity: document.querySelector("input[type='number']").value,
+        quality: document.querySelectorAll("select")[2].value,
+        type: document.querySelectorAll("select")[3].value,
+        month: document.querySelectorAll("select")[4].value,
+        location: document.querySelectorAll("select")[5].value,
+        file: fileName
+    };
+
+    localStorage.setItem("formData", JSON.stringify(formData));
+
     alert("Data Submitted Successfully!");
+
+    window.location.href = "view.html";
 }
+</script>
 </script>
 
 </body>
