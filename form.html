@@ -75,88 +75,73 @@
     <h2>Enter Production Data</h2>
 
    <form onsubmit="submitData(event)">
+   <input type="text" placeholder="Unit Name" required>
 
-    <input type="text" placeholder="Unit Name" required>
+<select required>
+    <option value="">Select Industry Type</option>
+    <option>Chemical</option>
+    <option>Petrochemical</option>
+    <option>Fertilizer</option>
+    <option>Agro Processing</option>
+    <option>Food Processing</option>
+</select>
 
-    <!-- Industry Type -->
-    <select required>
-        <option value="">Select Industry Type</option>
-        <option>Chemical</option>
-        <option>Petrochemical</option>
-        <option>Fertilizer</option>
-        <option>Agro Processing</option>
-        <option>Food Processing</option>
-    </select>
+<select required>
+    <option value="">Select Product Category</option>
+    <option>Organic Chemicals</option>
+    <option>Inorganic Chemicals</option>
+    <option>Polymers</option>
+    <option>Fertilizers</option>
+    <option>Pesticides</option>
+    <option>Food Products</option>
+</select>
 
-    <!-- Product Category -->
-    <select required>
-        <option value="">Select Product Category</option>
-        <option>Organic Chemicals</option>
-        <option>Inorganic Chemicals</option>
-        <option>Polymers</option>
-        <option>Fertilizers</option>
-        <option>Pesticides</option>
-        <option>Food Products</option>
-    </select>
+<input type="number" placeholder="Production Quantity (in tons)" min="1" required>
 
-    <!-- Quantity -->
-    <input type="number" placeholder="Production Quantity (in tons)" min="1" required>
+<select required>
+    <option value="">Select Quality</option>
+    <option>High</option>
+    <option>Medium</option>
+    <option>Low</option>
+</select>
 
-    <!-- Quality -->
-    <select required>
-        <option value="">Select Quality</option>
-        <option>High</option>
-        <option>Medium</option>
-        <option>Low</option>
-    </select>
+<select required>
+    <option value="">Select Product Type</option>
+    <option>Solid</option>
+    <option>Liquid</option>
+    <option>Gas</option>
+</select>
 
-    <!-- Product Type -->
-    <select required>
-        <option value="">Select Product Type</option>
-        <option>Solid</option>
-        <option>Liquid</option>
-        <option>Gas</option>
-    </select>
+<select required>
+    <option value="">Select Month</option>
+    <option>January</option>
+    <option>February</option>
+    <option>March</option>
+    <option>April</option>
+    <option>May</option>
+    <option>June</option>
+    <option>July</option>
+    <option>August</option>
+    <option>September</option>
+    <option>October</option>
+    <option>November</option>
+    <option>December</option>
+</select>
 
-    <!-- Month -->
-    <select required>
-        <option value="">Select Month</option>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
-    </select>
+<select required>
+    <option value="">Select State</option>
+    <option>Rajasthan</option>
+    <option>Gujarat</option>
+    <option>Maharashtra</option>
+    <option>Punjab</option>
+    <option>Haryana</option>
+    <option>Uttar Pradesh</option>
+    <option>Madhya Pradesh</option>
+</select>
 
-    <!-- Location -->
-    <select required>
-        <option value="">Select State</option>
-        <option>Rajasthan</option>
-        <option>Gujarat</option>
-        <option>Maharashtra</option>
-        <option>Punjab</option>
-        <option>Haryana</option>
-        <option>Uttar Pradesh</option>
-        <option>Madhya Pradesh</option>
-    </select>
+<textarea placeholder="Remarks (optional)"></textarea>
 
-    <!-- Remarks -->
-    <textarea placeholder="Remarks (optional)"></textarea>
-
-    <button type="submit">Submit Data</button>
-
-
-        <textarea placeholder="Remarks (optional)"></textarea>
-
-        <button type="submit">Submit Data</button>
-
+<button type="submit">Submit Data</button>
     </form>
 </div>
 
