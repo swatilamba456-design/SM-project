@@ -1,48 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Entry</title>
+    <title>Data Entry - S&M System</title>
+
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
         }
+
+        /* Navbar */
+        .nav {
+            background: #1b5e20;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Form Container */
         .container {
-            width: 400px;
-            margin: auto;
+            width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
         }
-        input, select {
+
+        input, select, textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
+
         button {
-            padding: 10px;
-            background: blue;
+            width: 100%;
+            padding: 12px;
+            background: #2e7d32;
             color: white;
             border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1b5e20;
         }
     </style>
 </head>
+
 <body>
 
+<!-- Navbar -->
+<div class="nav">
+    <div>S&M System</div>
+    <div>
+        <a href="dashboard.html">Home</a>
+        <a href="view.html">View Data</a>
+    </div>
+</div>
+
+<!-- Form -->
 <div class="container">
     <h2>Enter Production Data</h2>
 
-    <input type="text" placeholder="Unit Name">
-    <input type="text" placeholder="Product Type">
-    <input type="number" placeholder="Production Quantity">
-    
-    <select>
-        <option>Month</option>
-        <option>January</option>
-        <option>February</option>
-    </select>
+    <form onsubmit="submitData(event)">
 
-    <button onclick="submitData()">Submit</button>
+        <input type="text" placeholder="Unit Name" required>
+
+        <input type="text" placeholder="Industry Type" required>
+
+        <input type="text" placeholder="Product Category" required>
+
+        <input type="number" placeholder="Production Quantity" min="1" required>
+
+        <select required>
+            <option value="">Select Month</option>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+        </select>
+
+        <input type="text" placeholder="State / Location" required>
+
+        <textarea placeholder="Remarks (optional)"></textarea>
+
+        <button type="submit">Submit Data</button>
+
+    </form>
 </div>
 
 <script>
-function submitData() {
+function submitData(event) {
+    event.preventDefault();
     alert("Data Submitted Successfully!");
 }
 </script>
